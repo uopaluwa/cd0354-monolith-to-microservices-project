@@ -18,6 +18,11 @@ spec:
       - name: udagram-api-feed
         image: opals/udagram-api-feed
         imagePullPolicy: Always
+        envFrom:
+          - secretRef:
+            name: mysecret
+          - configMapRef:
+            name: myconfig
         ports:
         - containerPort: 8100
         livenessProbe:

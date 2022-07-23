@@ -17,6 +17,11 @@ spec:
       containers:
       - name: udagram-api-user
         image: opals/udagram-api-user
+        envFrom:
+          - secretRef:
+            name: mysecret
+          - configMapRef:
+            name: myconfig
         imagePullPolicy: Always
         ports:
         - containerPort: 8100
