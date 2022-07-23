@@ -15,12 +15,12 @@ spec:
         service: reverseproxy
     spec:
       containers:
-      - image: opals/reverseproxy
-        name: reverseproxy
+      - name: reverseproxy
+        image: opals/reverseproxy
         imagePullPolicy: Always          
         resources:
           requests:
-            memory: "128Mi"
+            memory: "64Mi"
             cpu: "250m"
           limits:
             memory: "1024Mi"
