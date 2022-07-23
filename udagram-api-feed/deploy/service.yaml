@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: backend_feed
+  name: backend_feed-svc
+spec:
+  ports:
+  - name: "8080"
+    port: 8100
+    targetPort: 8100
+  selector:
+    service: backend_feed

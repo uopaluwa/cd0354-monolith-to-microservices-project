@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend_feed
+  labels:
+    app: backend_feed
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend_feed
+  template:
+    metadata:
+      labels:
+        app: backend_feed
+    spec:
+      containers:
+      - name: udagram-api-feed
+        image: opals/udagram-api-feed
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8100
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8100
+          initialDelaySeconds: 3
+          periodSeconds: 3

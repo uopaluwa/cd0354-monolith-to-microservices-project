@@ -36,6 +36,10 @@ import {V0_USER_MODELS} from './controllers/v0/model.index';
 
   app.use('/api/v0/', IndexRouter);
 
+  app.get("/health", (req, res, next) => {
+    res.status(200).send("Hello!");
+  });
+
   // Root URI call
   app.get( '/', async ( req, res ) => {
     res.send( '/api/v0/' );

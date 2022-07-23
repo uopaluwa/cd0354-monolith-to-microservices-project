@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-user
+  labels:
+    app: backend-user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-user
+  template:
+    metadata:
+      labels:
+        app: backend-user
+    spec:
+      containers:
+      - name: udagram-api-user
+        image: opals/udagram-api-user
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8100
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8100
+          initialDelaySeconds: 3
+          periodSeconds: 3
