@@ -18,9 +18,9 @@ spec:
       - name: udagram-api-user
         image: opals/udagram-api-user
         envFrom:
-          - secretRef:
+        - secretRef:
             name: mysecret
-          - configMapRef:
+        - configMapRef:
             name: myconfig
         imagePullPolicy: Always
         ports:
