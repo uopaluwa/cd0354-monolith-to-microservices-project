@@ -24,7 +24,7 @@ spec:
         - configMapRef:
             name: myconfig
         ports:
-        - containerPort: 8100
+        - containerPort: 8081
         # livenessProbe:
         #   httpGet:
         #     path: /health
