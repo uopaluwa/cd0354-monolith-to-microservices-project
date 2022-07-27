@@ -24,10 +24,10 @@ spec:
             name: myconfig
         imagePullPolicy: Always
         ports:
-        - containerPort: 8081
+        - containerPort: 8080
         # livenessProbe:
         #   httpGet:
         #     path: /health
-        #     port: 8100
+        #     port: 8080
         #   initialDelaySeconds: 3
         #   periodSeconds: 3
